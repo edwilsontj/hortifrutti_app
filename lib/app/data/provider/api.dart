@@ -18,7 +18,7 @@ class Api extends GetConnect {
   }
 
   Future<List<StoreModel>> getStores() async {
-    var response = _errorHandler(await get('cidades/2/estabelecimentos'));
+    var response = _errorHandler(await get('cidades/1/estabelecimentos'));
 
     List<StoreModel> data = [];
     for (var store in response.body) {
@@ -26,6 +26,12 @@ class Api extends GetConnect {
     }
 
     return data;
+  }
+
+  Future<StoreModel> getStore(int id) async {
+    var response = _errorHandler(await get('estabelecimentos/$id'));
+
+    return StoreModel.fromJson(response.body);
   }
 
   Response _errorHandler(Response response) {

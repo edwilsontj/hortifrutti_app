@@ -1,20 +1,30 @@
+import 'category.dart';
+
 class StoreModel {
   int id;
   String name;
-  String image;
-  bool isOnline;
+  String logo;
+  bool isonline;
+  List<CategoryModel> categories;
 
   StoreModel({
     required this.id,
     required this.name,
-    required this.image,
-    required this.isOnline,
+    required this.logo,
+    required this.isonline,
+    required this.categories,
   });
 
   factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
         id: json['id'],
+        isonline: json['online'] == 1,
         name: json['nome'],
-        image: json['logo'] ?? "",
-        isOnline: json['isOnline'] == 1,
+        logo: json['logo'] ?? "",
+        categories: json['categorias'] == null
+            ? []
+            : List<CategoryModel>.from(
+                json['categorias']
+                    .map((category) => CategoryModel.fromJson(category)),
+              ),
       );
 }

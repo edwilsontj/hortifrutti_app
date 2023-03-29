@@ -36,8 +36,8 @@ class DashboardPage extends GetView<DashboardController> {
             index: controller.currentPageIndex.value,
             children: [
               HomePage(),
-              Text('Meu Perfil'),
-              Text('Meus Pedidos'),
+              const Text('Meu Perfil'),
+              const Text('Meus Pedidos'),
             ],
           ),
         ));
