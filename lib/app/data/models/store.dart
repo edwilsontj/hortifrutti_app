@@ -1,4 +1,6 @@
 import 'category.dart';
+import 'payment_method.dart';
+import 'shipping_by_city.dart';
 
 class StoreModel {
   int id;
@@ -6,6 +8,8 @@ class StoreModel {
   String logo;
   bool isonline;
   List<CategoryModel> categories;
+  List<ShippingByCityModel> shippingByCity;
+  List<PaymentMethodModel> paymentMethods;
 
   StoreModel({
     required this.id,
@@ -13,6 +17,8 @@ class StoreModel {
     required this.logo,
     required this.isonline,
     required this.categories,
+    required this.shippingByCity,
+    required this.paymentMethods,
   });
 
   factory StoreModel.fromJson(Map<String, dynamic> json) => StoreModel(
@@ -26,5 +32,15 @@ class StoreModel {
                 json['categorias']
                     .map((category) => CategoryModel.fromJson(category)),
               ),
+        shippingByCity: json['cidades'] == null
+            ? []
+            : List<ShippingByCityModel>.from(
+                json['cidades']
+                    .map((city) => ShippingByCityModel.fromJson(city)),
+              ),
+        paymentMethods: json['meios_pagamentos'] == null
+            ? []
+            : List<PaymentMethodModel>.from(json['meios_pagamentos'].map(
+                (paymentMethod) => PaymentMethodModel.fromJson(paymentMethod))),
       );
 }
