@@ -2,7 +2,11 @@ import 'package:get/get_connect/connect.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
 import 'package:hortifrutti_app/app/data/models/store.dart';
 
+// IP para rodar app como linux
 const baseUrl = 'http://127.0.0.1:3333/';
+
+// IP para rodar app adb wsa
+// const baseUrl = 'http://172.26.238.217:3333/';
 
 class Api extends GetConnect {
   @override

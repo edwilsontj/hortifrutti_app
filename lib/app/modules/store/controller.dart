@@ -20,7 +20,7 @@ class StoreController extends GetxController with StateMixin<StoreModel> {
           },
         );
 
-    // TODO: implement onInit
+    // ignore: todo
     super.onInit();
   }
 }
