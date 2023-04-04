@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hortifrutti_app/app/data/models/cart_product.dart';
 import 'package:intl/intl.dart';
 
+import '../../routes/routes.dart';
 import 'controller.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -54,7 +55,7 @@ class CartPage extends GetView<CartController> {
                 )
               else
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Get.toNamed(Routes.checkout),
                   child: const Text('Avançar'),
                 ),
             ],

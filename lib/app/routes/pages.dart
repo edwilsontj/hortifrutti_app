@@ -5,6 +5,8 @@ import 'package:hortifrutti_app/app/routes/routes.dart';
 
 import '../modules/cart/binding.dart';
 import '../modules/cart/page.dart';
+import '../modules/checkout/binding.dart';
+import '../modules/checkout/page.dart';
 import '../modules/products/binding.dart';
 import '../modules/products/page.dart';
 import '../modules/store/binding.dart';
